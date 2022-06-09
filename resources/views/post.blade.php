@@ -8,7 +8,8 @@
                 <div class="col-md-8 blog-post-wrapper">
 
                     <div class="post-header wow fadeInUp">
-                        <p>By Posted M Farhan Novian in <a href="/categories/{{ $post->category->slug }}"
+                        <p>By Posted <a href="/authors/{{ $post->author->username }}"> {{ $post->author->name }} </a> In <a
+                                href="/categories/{{ $post->category->slug }}"
                                 class="">{{ $post->category->name }}</a>
                         </p>
                         {{-- // <img src="{{ asset('assets/images/Blog_single/Blog_single@2x.jpg') }}" alt="blog post" class="post-featured-image"> --}}

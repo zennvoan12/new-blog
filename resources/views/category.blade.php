@@ -5,8 +5,8 @@
     <main class="blog-grid-page">
         <div class="container">
             <h1 class="oleez-page-title wow fadeInUp">Post Category : {{ $category }}</h1>
-            @foreach ($posts as $post)
-                <div class="row">
+            <div class="row">
+                    @foreach ($posts as $post)
                     <div class="col-md-4">
                         <div class="blog-post-card wow fadeInUp">
                             <a href="/post/{{ $post->slug }}">
@@ -21,8 +21,8 @@
                         </div>
                     </div>
 
+                    @endforeach
                 </div>
-            @endforeach
         </div>
     </main>
 @endsection

@@ -12,13 +12,14 @@ class PostController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     'posts' => Post::all()
      */
     public function index()
     {
         return view('blog', [
 
             'title' => 'Posts',
-            'posts' => Post::all()
+            'posts' => Post::latest()->get()
 
         ]);
     }

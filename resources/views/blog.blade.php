@@ -4,7 +4,7 @@
 @section('container')
     <main class="blog-grid-page">
         <div class="container">
-            <h1 class="oleez-page-title wow fadeInUp">ALL Post</h1>
+            <h1 class="oleez-page-title wow fadeInUp">{{ $title }}</h1>
             <div class="row">
                 @foreach ($posts as $post)
                 <div class="col-md-4">

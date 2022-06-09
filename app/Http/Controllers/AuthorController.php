@@ -10,7 +10,7 @@ class AuthorController extends Controller
     public function show(User $author)
     {
         return view('blog', [
-            'title' => 'User Post' ,
+            'title' => 'Posted By : ' . $author->name,
             'posts' => $author->posts
         ]);
     }

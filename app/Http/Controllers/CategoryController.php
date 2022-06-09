@@ -52,10 +52,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category', [
-            'title' => $category->name,
+        return view('blog', [
+            'title' => "Posted By Category : ". $category->name,
             'posts' => $category->posts,
-            'category' => $category->name
+
         ]);
     }
 

@@ -34,14 +34,17 @@
         </button>
         <div class="collapse navbar-collapse" id="oleezMainNav">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                <li class="nav-item {{ ($title === 'Home') ? 'active' : '' }}">
+                <li class="nav-item {{ $active === 'home' ? 'active' : '' }}">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {{ ($title === 'About') ? 'active' : '' }}">
+                <li class="nav-item {{ $active === 'about' ? 'active' : '' }}">
                     <a class="nav-link" href="/about">About</a>
                 </li>
-                <li class="nav-item {{ ($title === 'All Posts') ? 'active' : '' }}">
+                <li class="nav-item {{ $active === 'blog' ? 'active' : '' }}">
                     <a class="nav-link " href="/blog">Blog</a>
+                </li>
+                <li class="nav-item {{ $active === 'categories' ? 'active' : '' }}">
+                    <a class="nav-link " href="/categories">Category</a>
                 </li>
 
 

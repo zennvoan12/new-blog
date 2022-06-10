@@ -35,5 +35,13 @@ class CategorySeeder extends Seeder
             'name' => 'Game',
             'slug' => 'game'
         ]);
+        Category::create([
+            'name' => 'Branding',
+            'slug' => 'branding'
+        ]);
+        Category::create([
+            'name' => 'Photography',
+            'slug' => 'photography'
+        ]);
     }
 }

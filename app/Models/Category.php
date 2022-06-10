@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-
+    protected $load = ['category','author'];
     public function posts()
     {
         return $this->hasMany(Post::class);

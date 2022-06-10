@@ -2,28 +2,27 @@
 
 
 @section('container')
-    <main class="blog-grid-page">
-        <div class="container">
-            <h1 class="oleez-page-title wow fadeInUp">Post Categories</h1>
-            <div class="row">
-                    @foreach ($categories as $category)
-                    <div class="col-md-4 border">
-                        <div class="blog-post-card wow fadeInUp">
-                            <a href="/post/{{ $category->slug }}">
-                                <div class="blog-post-thumbnail-wrapper">
-                                    <img src="{{ asset('assets/images/Bloggrid/Bloggrid_2@2x.jpg') }}" alt="blog">
-                                </div>
-                            </a>
-                            <p class="blog-post-date">January 29, 2020</p>
-                            <a href="/post/{{ $category->slug }}"
-                                class="text-decoration-none text-black-50 ouline text-base">
-                                <h5 class="blog-post-title">{{ $category->name }}</h5>
-                            </a>
-                        </div>
-                    </div>
+    <h1 class="oleez-page-title wow fadeInUp">Post Categories</h1>
 
-                    @endforeach
+
+    <div class="cotainer">
+        <div class="row">
+            @foreach ($categories as $category)
+                <div class="col-md-4 p-3">
+                    <a href="/categories/{{ $category->slug }}" class="text-decoration-none text-white">
+                        <div class="card bg-dark text-white">
+                            <img src="https://source.unsplash.com/user/erondu/500x500?{{ $category->name }}"
+                                class="card-img" alt="{{ $category->name }}">
+                            <div class="card-img-overlay d-flex align-items-center p-0">
+                                <h5 class="card-title text-center flex-fill p-4 fs-3"
+                                    style="background-color: rgba(0,0,0,0.7)">
+                                    {{ $category->name }}</h5>
+                            </div>
+                    </a>
                 </div>
         </div>
-    </main>
+        @endforeach
+    </div>
+
+    </div>
 @endsection

@@ -8,24 +8,24 @@
                 <div class="col-md-8 blog-post-wrapper">
 
                     <div class="post-header wow fadeInUp">
+                        <img src="https://source.unsplash.com/user/erondu/1600x900?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="post-featured-image">
                         <p>By Posted <a href="/authors/{{ $post->author->username }}"> {{ $post->author->name }} </a> In <a
                                 href="/categories/{{ $post->category->slug }}"
                                 class="">{{ $post->category->name }}</a>
                         </p>
-                        {{-- // <img src="{{ asset('assets/images/Blog_single/Blog_single@2x.jpg') }}" alt="blog post" class="post-featured-image"> --}}
-                        <p class="post-date">January 29, 2020</p>
+                        <p class="post-date">{{ $post->created_at->diffForHumans() }}</p>
                     </div>
                     <div class="post-content wow fadeInUp">
                         <h4>{{ $post->title }}</h4>
-                        <p>{!! $post->body !!}</p>
-                        <p>{!! $post->body !!}</p>
+                        {!! $post->body !!}
+                        {!! $post->body !!}
                         <blockquote class="blockquote wow fadeInUp">
-                            <p>{!! $post->body !!}.</p>
+                            {!! $post->body !!}
                         </blockquote>
                         <h5>{{ $post->title }}</h4>
-                            <p>{!! $post->body !!}</p>
+                            {!! $post->body !!}
                             <h5>{{ $post->title }}</h4>
-                                <p>{!! $post->body !!}</p>
+                                {!! $post->body !!}
                     </div>
                     <div class="post-tags wow fadeInUp">
                         <a href="#!" class="post-tag">Design Studio</a>

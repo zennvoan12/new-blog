@@ -15,7 +15,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        return view('about', [
+            'title' => 'About',
+            'active' => 'about'
+        ]);
     }
 
     /**
@@ -47,9 +50,7 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-            return view('about',[
 
-                ]);
     }
 
     /**

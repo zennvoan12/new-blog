@@ -16,11 +16,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categories',[
-                'title' => 'Post Categories',
-                'categories' => Category::all(),
+        return view('categories', [
+            'title' => 'Categories',
+            'active' => 'categories',
+            'categories' => Category::all(),
 
-            ]);
+        ]);
     }
 
     /**
@@ -53,9 +54,10 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return view('blog', [
-            'title' => "Posted By Category : ". $category->name,
-            'posts' => $category->posts->load('category', 'author'),
+            'title' => "Posted By Category : " . $category->name,
+            'active' => 'categories',
 
+            'posts' => $category->posts,
         ]);
     }
 

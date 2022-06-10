@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -19,20 +20,12 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home",
+Route::get('/', [HomeController::class, 'index']);
 
-    ]);
-});
-
-Route::get('/about', function () {
-    return view('about', [
-        'title' => 'About',
-    ]);
-});
+Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/blog', [PostController::class, 'index']);
+
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', [CategoryController::class, 'index']);

@@ -46,9 +46,9 @@
                 <li class="nav-item {{ $active === 'categories' ? 'active' : '' }}">
                     <a class="nav-link " href="/categories">Category</a>
                 </li>
-
-
             </ul>
+
+
 
 
             <ul class="navbar-nav d-none d-lg-flex">
@@ -57,12 +57,7 @@
                         <img src="{{ asset('assets/images/search.svg') }}" alt="search">
                     </a>
                 </li>
-                <li class="nav-item nav-item-cart">
-                    <a class="nav-link nav-link-btn" href="#!">
-                        <span class="cart-item-count">0</span>
-                        <img src="{{ asset('assets/images/shopping-cart.svg') }}" alt="cart">
-                    </a>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle " href="#!" id="languageDropdown" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">ENG</a>
@@ -71,12 +66,22 @@
                         <a class="dropdown-item" href="#!">FRE</a>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a href="/login" class="nav-link {{ $active === 'categories' ? 'active' : '' }}">
+                        <i class="mdi mdi-tooltip-image:"><img
+                                src="{{ asset('assets/icons/box-arrow-left.svg') }}" class="nav-img small"
+                                alt=""></i></a>
+                </li>
                 <li class="nav-item ml-5">
                     <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
                         <img src="{{ asset('assets/images/social icon@2x.svg') }}" alt="social-nav-toggle">
                     </a>
                 </li>
+
             </ul>
+
+
         </div>
     </nav>
 </header>

@@ -26,11 +26,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/blog', [PostController::class, 'index']);
-
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
-
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'store']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+

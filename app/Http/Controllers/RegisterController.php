@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Response;
 
 class RegisterController extends Controller
 {
@@ -13,10 +16,6 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('register.index', [
-            'title' => 'Register',
-            'active' => 'register'
-         ]);
     }
 
     /**
@@ -26,7 +25,10 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+        return view('register.index', [
+            'title' => 'Register',
+            'active' => 'register'
+        ]);
     }
 
     /**
@@ -37,7 +39,19 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+
+            'name' => ['required', 'max:255'],
+            'username' => ['required', 'min:8', 'max:20', 'unique:users'],
+            'email' => ['required', 'email:dns', 'unique:users'],
+            'password' =>  ['required', \Illuminate\Validation\Rules\Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()],
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::create($validatedData);
+        Alert::success('Congrats', 'You\'ve Successfully Registered');
+        return redirect('/login')->with('success', 'Registrations successfully');
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Category;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -16,11 +18,21 @@ class PostController extends Controller
      */
     public function index()
     {
+        $title = '';
+        if (request('category')) {
+            $category= Category::firstWhere('slug', request('category'));
+            $title =' in '. $category->name;
+        }
+
+        if(request('author')){
+            $author = User::firstWhere('username', request('author'));
+            $title =' By ' . $author->name;
+        }
         return view('blog', [
 
-            'title' => 'All Posts',
+            'title' => 'All Posts' . $title,
             'active' => 'blog',
-            'posts' => Post::latest()->get()
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
 
         ]);
     }

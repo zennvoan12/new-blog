@@ -9,8 +9,8 @@
 
                     <div class="post-header wow fadeInUp">
                         <img src="https://source.unsplash.com/user/erondu/1600x900?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="post-featured-image">
-                        <p>By Posted <a href="/authors/{{ $post->author->username }}"> {{ $post->author->name }} </a> In <a
-                                href="/categories/{{ $post->category->slug }}"
+                        <p>By Posted <a href="/blog?author={{ $post->author->username }}"> {{ $post->author->name }} </a> In <a
+                                href="/blog?category={{ $post->category->slug }}"
                                 class="">{{ $post->category->name }}</a>
                         </p>
                         <p class="post-date">{{ $post->created_at->diffForHumans() }}</p>

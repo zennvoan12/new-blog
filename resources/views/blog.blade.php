@@ -2,7 +2,7 @@
 
 
 @section('container')
-    <h1 class="oleez-page-title wow fadeInUp">{{ $title }}</h1>
+    <h1 class="oleez-page-title wow fadeInUp text-center">{{ $title }}</h1>
     @if ($posts->count())
         <div class="card mb-3">
             <img src="{{ URL('https://source.unsplash.com/user/erondu/1600x900?posts[0]->category->name') }}"
@@ -13,9 +13,9 @@
                     </a>
                 </h3>
                 <p><small class="text-muted">
-                        By Posted <a href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}
+                        By Posted <a href="/blog?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}
                         </a>
-                        In <a href="/categories/{{ $posts[0]->category->slug }}" class="">
+                        In <a href="/blog?category={{ $posts[0]->category->slug }}" class="">
                             {{ $posts[0]->category->name }}</a> </small>
                 </p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -56,9 +56,9 @@
                                         alt="$post->category->name">
                                 </div>
                             </a>
-                            <p>By Posted <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}
+                            <p>By Posted <a href="/blog?author={{ $post->author->username }}">{{ $post->author->name }}
                                 </a>
-                                In <a href="/categories/{{ $post->category->slug }}" class="">
+                                In <a href="/blog?category={{ $post->category->slug }}" class="">
                                     {{ $post->category->name }}</a>
                             </p>
                             <p class="blog-post-date">{{ $posts[0]->created_at->diffForHumans() }}</p>
@@ -75,4 +75,14 @@
             </div>
         </div>
     </main>
+
+    <div class="row">
+        <div class="col-12 pb-5 mb-3">
+                <nav class="oleez-pagination d-flex  justify-content-center wow fadeInUp" >
+
+                  <a > {{ $posts->links() }} </a>
+                </nav>
+        </div>
+    </div>
+
 @endsection

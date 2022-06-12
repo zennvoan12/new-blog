@@ -44,7 +44,7 @@
 
             <div class="row">
                 @foreach ($posts->skip(1) as $post)
-                <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="blog-post-card wow fadeInUp">
                             <div class="position-absolute bg-dark px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.3)">
                                 <a href="/categories/{{ $post->category->slug }}"
@@ -53,10 +53,11 @@
                             <a href="/post/{{ $post->slug }}">
                                 <div class="blog-post-thumbnail-wrapper">
                                     <img src="https://source.unsplash.com/user/erondu/1600x900?{{ $post->category->name }}"
-                                        alt="$post->category->name">
+                                        alt="{{ $post->category->name }}">
                                 </div>
                             </a>
-                            <p>By Posted <a href="/blog?author={{ $post->author->username }}">{{ $post->author->name }}
+                            <p>By Posted <a
+                                    href="/blog?author={{ $post->author->username }}">{{ $post->author->name }}
                                 </a>
                                 In <a href="/blog?category={{ $post->category->slug }}" class="">
                                     {{ $post->category->name }}</a>
@@ -78,11 +79,9 @@
 
     <div class="row">
         <div class="col-12 pb-5 mb-3">
-                <nav class="oleez-pagination d-flex  justify-content-center wow fadeInUp" >
-
-                  <a > {{ $posts->links() }} </a>
-                </nav>
+            <nav class="oleez-pagination d-flex justify-content-center wow fadeInUp ">
+                {{ $posts->links() }}
+            </nav>
         </div>
     </div>
-
 @endsection

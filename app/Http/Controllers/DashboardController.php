@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Alert;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login.index', [
-            'active' => 'login',
-            'title' => 'Login'
-        ]);
+        return view('dashboard.index');
     }
 
     /**
@@ -26,15 +21,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function logout()
+    public function create()
     {
-        Auth::logout();
-
-        request()->session()->invalidate();
-
-        request()->session()->regenerateToken();
-
-        return redirect('/login');
+        //
     }
 
     /**
@@ -45,18 +34,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => ['email','email:dns'],
-            'password' => ['required']
-            ]);
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/dashboard');
-        }
-
-        return back()->with('loginFail', 'Login Error');
+        //
     }
 
     /**

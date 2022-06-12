@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,14 @@ Route::get('/blog', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'store']);
 
-Route::get('/register', [RegisterController::class, 'create']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+
+
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');

@@ -4,15 +4,15 @@
     <main class="main-content  mt-0">
         @if (Session::has('success'))
             <script>
-                swal('Congrats You\ve Successfully Registered', '{{ Session::get('success') }}', 'success');
+                swal('Congrats You ve Successfully Registered', '{{ Session::get('success') }}', 'success');
             </script>
         @endif
 
         @if (Session::has('loginFail'))
-        <script>
-            swal('Login Fail', '{{ Session::get('loginFail') }}', 'error');
-        </script>
-    @endif
+            <script>
+                swal('Login Fail', '{{ Session::get('loginFail') }}', 'error');
+            </script>
+        @endif
         <div class="page-header align-items-start min-vh-100"
             style="background-image: url('{{ URL('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80') }}');">
             <span class="mask bg-gradient-dark opacity-6"></span>
@@ -49,11 +49,12 @@
 
                                         <input type="email" name="email" placeholder="name@example" id="email"
                                             class="form-control" autofocus required>
-                                            <label for="email"></label>
+                                        <label for="email"></label>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
 
-                                        <input type="password" name="password" id="password" class="form-control" required>
+                                        <input type="password" name="password" id="password" class="form-control"
+                                            required>
                                         <label for="password"></label>
                                     </div>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">

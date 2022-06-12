@@ -67,12 +67,27 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a href="/login" class="nav-link {{ $active === 'categories' ? 'active' : '' }}">
-                        <i class="mdi mdi-tooltip-image:"><img
-                                src="{{ asset('assets/icons/box-arrow-left.svg') }}" class="nav-img small"
-                                alt=""></i></a>
+                @auth
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a class="nav-link" href="#!" id="languageDropdown" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Welcome Back, {{ auth()->user()->name }}</a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/dashboard">My Dashboard</a>
+
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </form>
+
+                    </div>
                 </li>
+                @else
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link {{ $active === 'login' ? 'active' : '' }}">
+                            <i class="mdi mdi-tooltip-image:"><img src="{{ asset('assets/icons/box-arrow-left.svg') }}"
+                                    class="nav-img small" alt=""></i></a>
+                    </li>
+                @endauth
                 <li class="nav-item ml-5">
                     <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
                         <img src="{{ asset('assets/images/social icon@2x.svg') }}" alt="social-nav-toggle">

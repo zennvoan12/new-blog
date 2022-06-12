@@ -34,18 +34,15 @@
 
 
 
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/vendors/popper.js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/wowjs/wow.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/slick-carousel/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/landing.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script src="{{ asset('assets/js/material-dashboard.min.js?v=3.0.3') }}"></script>
+
     <script>
         new WOW({
             mobile: false

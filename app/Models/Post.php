@@ -23,7 +23,7 @@ class Post extends Model
                 $query->where('slug', $category);
             });
         });
-        
+
         $query->when(
             $filters['author'] ?? false,
             fn ($query, $author) =>
@@ -43,5 +43,10 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

@@ -58,7 +58,8 @@
                                         <label for="password"></label>
                                     </div>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <input class="form-check-input" name="remember_token" type="checkbox"
+                                            id="rememberMe">
                                         <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">

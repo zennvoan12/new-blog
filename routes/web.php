@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AuthorController;
+
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Category;
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +43,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
+
+
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');

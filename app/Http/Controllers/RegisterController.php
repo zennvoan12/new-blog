@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Alert;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -44,14 +45,15 @@ class RegisterController extends Controller
             'name' => ['required', 'max:255'],
             'username' => ['required', 'min:8', 'max:20', 'unique:users'],
             'email' => ['required', 'email:dns', 'unique:users'],
-            'password' =>  ['required', \Illuminate\Validation\Rules\Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()],
-        ]);
+         //   'password' =>  ['required', \Illuminate\Validation\Rules\Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()],
+            'password' => ['required' ,'min:6', 'max:64']
+         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
         Alert::success('Congrats', 'You\'ve Successfully Registered');
-        return redirect('/login')->with('success', 'Registrations successfully');
+        return redirect('/login')->with('success', 'Next Step Login Please');
     }
 
     /**

@@ -6,7 +6,11 @@
         <h1 class="">MY POST</h1>
     </header>
     <hr class="hr-3">
-
+    @if (Session::has('success'))
+        <script>
+            swal('Congrats You ve Post has been Added', '{{ Session::get('success') }}', 'success');
+        </script>
+    @endif
     <main class="container-fluid">
         <div class="table-responsive col-lg-12">
             <a href="/dashboard/posts/create" role="button" class="btn btn-primary mb-3">Create new post </a>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 use Cviebrock\EloquentSluggable\Services\SlugService as ServicesSlugService;
 
 class DashboardPostController extends Controller
@@ -42,8 +42,21 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'title'=> 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' =>'required',
+            'body' => 'required']);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] =str::limit(strip_tags($request->body), 200);
+
+        Post::create($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Nice Work');
     }
+
+
 
     /**
      * Display the specified resource.

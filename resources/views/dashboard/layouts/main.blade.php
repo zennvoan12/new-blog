@@ -30,7 +30,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
     {{-- Trix Editor --}}

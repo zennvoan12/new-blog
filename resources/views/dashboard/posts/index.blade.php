@@ -9,6 +9,7 @@
 
     <main class="container-fluid">
         <div class="table-responsive col-lg-12">
+            <a href="/dashboard/posts/create" role="button" class="btn btn-primary mb-3">Create new post </a>
             <table class="table">
                 <thead>
                     <tr>

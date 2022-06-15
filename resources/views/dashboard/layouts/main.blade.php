@@ -33,6 +33,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
+    {{-- Trix Editor --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/trix.css') }}">
+    <script type="text/javascript" src="{{ asset('assets/js/trix.js') }}"></script>
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,8 +49,6 @@
         @include('dashboard.partials.spinner')
 
         @include('dashboard.partials.sidebar')
-
-
 
 
 

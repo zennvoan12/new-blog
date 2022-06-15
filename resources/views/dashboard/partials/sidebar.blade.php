@@ -20,7 +20,7 @@
                 <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 
                 <div class="nav-item dropdown">
-                    <a href="/dashboard/posts" class="nav-item nav-link {{ Request::is('dashboard/blog') ? 'active' : '' }}"><i class="far fa-file-alt me-2"></i>Post</a>
+                    <a href="/dashboard/posts" class="nav-item nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}"><i class="far fa-file-alt me-2"></i>Post</a>
 
                 </div>
             </div>

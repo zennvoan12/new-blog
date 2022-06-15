@@ -96,13 +96,12 @@
     }
 
     .content {
-        width: calc(100% - 500px);
+        width: calc(100% - 250px);
     }
 
     .content.open {
         width: 100%;
-        margin: auto;
-        text-align: justify;
+        margin-left: 0;
     }
 }
 
@@ -198,7 +197,7 @@
 }
 
 .content .navbar .dropdown-toggle::after {
-    margin: auto;
+    margin-left: 6px;
     vertical-align: middle;
     border: none;
     content: "\f107";

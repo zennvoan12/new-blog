@@ -26,7 +26,7 @@
 
                         </form>
                         @if ($post->image)
-                            <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
+                            <img src="{{ asset('storage/'. $post->image) }}"
                                 alt="{{ $post->category->name }}" class="post-featured-image img-fluid ">
                         @else
                             <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
@@ -36,14 +36,7 @@
                     </div>
                     <div class="post-content wow fadeInUp">
                         <h4>{{ $post->title }}</h4>
-                        {!! $post->body !!}
-                        {!! $post->body !!}
-                        <blockquote class="blockquote wow fadeInUp">
-                            {!! $post->body !!}
-                        </blockquote>
-                        <h5>{{ $post->title }}</h4>
-                            {!! $post->body !!}
-                            <h5>{{ $post->title }}</h4>
+
                                 {!! $post->body !!}
                     </div>
                     <div class="post-tags wow fadeInUp">

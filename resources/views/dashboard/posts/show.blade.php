@@ -13,10 +13,26 @@
                 <div class="col-xl-8 blog-post-wrapper">
 
                     <div class="post-header-fluid wow fadeInDown">
-                        <a href="/dashboard/posts" class="btn btn-success my-3 "> <i class="bi bi-backspace"></i> Back to My Post</a>
-                        <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
-                            alt="{{ $post->category->name }}" class="post-featured-image img-fluid ">
-                        <p class="post-date">{{ $post->created_at->diffForHumans() }}</p>
+                        <a href="/dashboard/posts" class="btn btn-success my-3 "> <i class="bi bi-backspace"></i> Back to My
+                            Post</a>
+                        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><i
+                                class="bi bi-pencil-square"></i>Edit </a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger " onclick="return confirm('r u sure about that?')">
+                                <i class="bi bi-x-circle"></i></span> Delete </button>
+
+
+                        </form>
+                        @if ($post->image)
+                            <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
+                                alt="{{ $post->category->name }}" class="post-featured-image img-fluid ">
+                        @else
+                            <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
+                            style="max-height:350px; overflow:hidden;">
+                                @endif
+                            <p class="post-date">{{ $post->created_at->diffForHumans() }}</p>
                     </div>
                     <div class="post-content wow fadeInUp">
                         <h4>{{ $post->title }}</h4>

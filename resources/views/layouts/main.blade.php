@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="{{ asset('./assets/vendors/slick-carousel/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('./assets/vendors/slick-carousel/slick-theme.css') }}">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicon_io/android-chrome-192x192.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon_io/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon_io/favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('assets/images/favicon_io/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('assets/images/favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/images/favicon_io/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('assets/images/favicon_io/site.webmanifest') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/material-dashboard.css') }}">
@@ -22,7 +25,7 @@
 
     <link rel="stylesheet" href="{{ asset('./assets/css/style.css') }}">
     <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/loader.js') }}"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -50,8 +53,8 @@
     <script src="{{ asset('assets/vendors/slick-carousel/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/landing.js') }}"></script>
-    <script src="assets/vendors/jquery/jquery.min.js"></script>
-    <script src="assets/js/loader.js"></script>
+    <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/loader.js') }}"></script>
 
     <script>
         new WOW({

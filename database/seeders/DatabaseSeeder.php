@@ -14,11 +14,7 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *     User::create([
-            'name' => 'Muhammad Farhan Novian',
-            'email' => 'inside.suck@gmail.com',
-            'password' => Hash::make('password')
-        ]);
+     *
         User::create([
             'name' => 'Julia Maya Tsaqila',
             'email' => 'julia2004@yahoo.com',
@@ -39,7 +35,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        User::create([
+            'name' => 'Muhammad Farhan Novian',
+            'username' =>'farhannovian',
+            'email' => 'inside.suck@gmail.com',
+            'password' => Hash::make('password')
+        ]);
         User::factory(5)->create();
         $this->call([
             CategorySeeder::class,

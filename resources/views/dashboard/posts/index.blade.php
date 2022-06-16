@@ -8,7 +8,7 @@
     <hr class="hr-3">
     @if (Session::has('success'))
         <script>
-            swal('Congrats You ve Post has been Added', '{{ Session::get('success') }}', 'success');
+            swal('Congrats You ve Post', '{{ Session::get('success') }}', 'success');
         </script>
     @endif
     <main class="container-fluid">
@@ -33,8 +33,16 @@
                             <td>
                                 <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><i
                                         class="bi bi-eye"></i></span> </a>
-                                <a href="" class="badge bg-warning"> <i class="bi bi-pencil"></i> </a>
-                                <a href="" class="badge bg-danger"> <i class="bi bi-x-circle"></i></span> </a>
+                                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning"> <i class="bi bi-pencil"></i> </a>
+                                <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="badge bg-danger border-0" onclick="return confirm('r u sure about that?')">
+                                        <i class="bi bi-x-circle"></i></span> </button>
+
+
+                                </form>
+
                             </td>
                         </tr>
                     @endforeach

@@ -8,9 +8,15 @@
                 <div class="col-md-8 blog-post-wrapper">
 
                     <div class="post-header wow fadeInUp">
-                        <img src="https://source.unsplash.com/user/erondu/1600x900?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="post-featured-image">
-                        <p>By Posted <a href="/blog?author={{ $post->author->username }}"> {{ $post->author->name }} </a> In <a
-                                href="/blog?category={{ $post->category->slug }}"
+                        @if ($post->image)
+                            <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
+                                alt="{{ $post->category->name }}" class="post-featured-image img-fluid ">
+                        @else
+                            <img src="https://source.unsplash.com/user/erondu/1080x720?{{ $post->category->name }}"
+                                style="max-height:350px; overflow:hidden;">
+                        @endif
+                        <p>By Posted <a href="/blog?author={{ $post->author->username }}"> {{ $post->author->name }}
+                            </a> In <a href="/blog?category={{ $post->category->slug }}"
                                 class="">{{ $post->category->name }}</a>
                         </p>
                         <p class="post-date">{{ $post->created_at->diffForHumans() }}</p>
@@ -18,14 +24,8 @@
                     <div class="post-content wow fadeInUp">
                         <h4>{{ $post->title }}</h4>
                         {!! $post->body !!}
-                        {!! $post->body !!}
-                        <blockquote class="blockquote wow fadeInUp">
-                            {!! $post->body !!}
-                        </blockquote>
-                        <h5>{{ $post->title }}</h4>
-                            {!! $post->body !!}
-                            <h5>{{ $post->title }}</h4>
-                                {!! $post->body !!}
+
+
                     </div>
                     <div class="post-tags wow fadeInUp">
                         <a href="#!" class="post-tag">Design Studio</a>

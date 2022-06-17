@@ -17,13 +17,25 @@
                 </div>
             </div>
             <div class="navbar-nav w-100">
-                <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-
-                <div class="nav-item dropdown">
-                    <a href="/dashboard/posts" class="nav-item nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}"><i class="far fa-file-alt me-2"></i>Post</a>
-
-                </div>
+                <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}"><i
+                        class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             </div>
+
+            <div class="navbar-nav w-100">
+                <a href="/dashboard/posts"
+                    class="nav-item nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}">
+                    <i class="far fa-file-alt me-2"></i>Post</a>
+            </div>
+            @can('admin')
+                <h6 class="sidebar-heading d-flex justify-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Adminstrator</span>
+                </h6>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard/categories"
+                        class="nav-item nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}">
+                        <i class="bi bi-grid"></i> Post Categories</a>
+                </div>
+            @endcan
         </nav>
     </div>
     <!-- Sidebar End -->

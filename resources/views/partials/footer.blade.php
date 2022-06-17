@@ -3,7 +3,10 @@
         <div class="footer-content">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/Logo_1.svg') }}" alt="oleez" class="footer-logo">
+                    <div class="">
+                        <img src="{{ asset('assets/images/logos/zennovian.svg') }}" alt="zennovian" class="footer-logo img-fluid bg-white d-flex justify-between content-center">
+
+                    </div>
                     <p class="footer-intro-text">Don't be shy, get in touch with us and create the world again!</p>
                     <nav class="footer-social-links">
                         <a href="#!">Fb</a>
@@ -35,7 +38,7 @@
             </div>
         </div>
         <div class="footer-text">
-            <p class="mb-md-0">© 2020, oleez Theme. Made with passion by <a href="https://www.bootstrapdash.com"
+            <p class="mb-md-0"> M Farhan Novian © 2022, oleez Theme. Made with passion by <a href="https://www.bootstrapdash.com"
                     target="_blank" rel="noopener noreferrer" class="text-reset">BootstrapDash</a>.</p>
             <p class="mb-0">All right reserved.</p>
         </div>

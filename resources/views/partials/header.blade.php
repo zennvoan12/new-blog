@@ -1,6 +1,6 @@
 <header class="oleez-header">
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/"><img src="{{ asset('assets/images/Logo_2.svg') }}" alt="Oleez"></a>
+        <a class="navbar-brand" href="/"><img src="{{ asset('assets/images/logos/zennovian.svg') }}" alt="Oleez"></a>
         <ul class="nav nav-actions d-lg-none ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#!" data-toggle="searchModal">

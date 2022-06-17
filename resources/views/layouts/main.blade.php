@@ -30,15 +30,17 @@
 </head>
 
 <body>
+    {{-- loader --}}
     <div class="oleez-loader"></div>
 
     @include('partials.header')
+
     <main class="container mt-5">
         @yield('container')
     </main>
 
-    @include('partials.footer')
 
+    @include('partials.footer')
     @include('partials.nav-social')
 
     @include('partials.search')
